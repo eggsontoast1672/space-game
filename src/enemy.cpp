@@ -13,7 +13,7 @@ Enemy::Enemy()
     case 0:
     {
         //Texture
-        Image enemyImageOne = LoadImage("../assets/enemy1.png");
+        Image enemyImageOne = LoadImage(ASSET_PATH "enemy1.png");
         ImageRotateCW(&enemyImageOne); //Rotate to align
         texture = LoadTextureFromImage(enemyImageOne);
         texture.height *= 10;
@@ -26,7 +26,7 @@ Enemy::Enemy()
     case 1 : 
     {
         //Texture
-        Image enemyImageTwo = LoadImage("../assets/enemy2.png");
+        Image enemyImageTwo = LoadImage(ASSET_PATH "enemy2.png");
         ImageRotateCW(&enemyImageTwo); //Rotate to align
         texture = LoadTextureFromImage(enemyImageTwo);
         texture.height *= 10;
@@ -38,7 +38,7 @@ Enemy::Enemy()
     } case 2:
     {
         //Texture
-        Image enemyImageThree = LoadImage("../assets/enemy3.png");
+        Image enemyImageThree = LoadImage(ASSET_PATH "enemy3.png");
         ImageRotateCW(&enemyImageThree); //Rotate to align
         texture = LoadTextureFromImage(enemyImageThree);
         texture.height *= 10;

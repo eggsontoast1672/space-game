@@ -9,7 +9,7 @@ MusicPlayer::MusicPlayer()
     InitAudioDevice();
 
     //Init music
-    music = LoadMusicStream("../assets/Music.mp3");
+    music = LoadMusicStream(ASSET_PATH "Music.mp3");
     PlayMusicStream(music);
     music.looping = true;
 }

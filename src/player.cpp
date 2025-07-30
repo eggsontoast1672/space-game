@@ -6,7 +6,7 @@ Player::Player()
     gameObjects.push_back(this); //Add to gameobjects
 
     //Init image
-    Image playerImage = LoadImage("../assets/ship.png");
+    Image playerImage = LoadImage(ASSET_PATH "ship.png");
     ImageRotateCW(&playerImage); //Rotate to align
     texture = LoadTextureFromImage(playerImage);
     texture.height *= 10;
@@ -26,7 +26,7 @@ Player::Player()
     score = 0;
 
     //Spawn sfx
-    shotSound = LoadSound("../assets/shootSFX.mp3");
+    shotSound = LoadSound(ASSET_PATH "shootSFX.mp3");
 }
 //Methods
 void Player::Update()

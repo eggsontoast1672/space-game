@@ -11,9 +11,9 @@ Bullet::Bullet(Vector2 spawnPosition)
     int random = GetRandomValue(0, 2);
 
     //Init texture
-    Image bulletImage = LoadImage("../assets/bullet.png");
+    Image bulletImage = LoadImage(ASSET_PATH "bullet.png");
     if (random == 1) //Random texture
-        bulletImage = LoadImage("../assets/bullet2.png");
+        bulletImage = LoadImage(ASSET_PATH "bullet2.png");
     ImageRotateCW(&bulletImage); //Rotate to align
     texture = LoadTextureFromImage(bulletImage);
     texture.height *= 10;

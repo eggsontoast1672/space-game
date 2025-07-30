@@ -6,7 +6,7 @@ Background::Background()
     gameObjects.push_back(this); //Add to gameobjects
 
     //Init texture
-    Image backgroundImage = LoadImage("../assets/background.png");
+    Image backgroundImage = LoadImage(ASSET_PATH "background.png");
     texture = LoadTextureFromImage(backgroundImage);
     SetTextureFilter(texture, FILTER_POINT);
     //Texture rect
