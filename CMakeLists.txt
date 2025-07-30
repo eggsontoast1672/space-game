@@ -26,8 +26,6 @@ set_property(TARGET game PROPERTY COMPILE_DEFINITIONS ASSET_PATH=\"${CMAKE_SOURC
 set_property(TARGET game PROPERTY INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/include)
 set_property(TARGET game PROPERTY LINK_LIBRARIES raylib)
 
-if(MSVC)
-  set_property(TARGET game PROPERTY COMPILE_OPTIONS -Wall)
-else()
+if(NOT MSVC)
   set_property(TARGET game PROPERTY COMPILE_OPTIONS -Wall -Wno-missing-braces)
 endif()
