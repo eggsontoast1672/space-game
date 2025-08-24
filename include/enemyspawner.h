@@ -1,10 +1,9 @@
 #ifndef ENEMYSPAWNER_H
 #define ENEMYSPAWNER_H
 
-#include "collisionhandler.h"
-#include "enemy.h"
-#include "globals.h"
-#include <iostream>
+#include <list>
+
+#include "gameobject.h"
 
 class EnemySpawner : public GameObject {
 public:

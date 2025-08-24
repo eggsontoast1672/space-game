@@ -1,5 +1,4 @@
 #include "bullet.h"
-#include <stdio.h>
 
 Bullet::Bullet(Vector2 spawnPosition) {
     gameObjects.push_back(this);

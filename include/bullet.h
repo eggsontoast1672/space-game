@@ -2,9 +2,8 @@
 #define BULLET_H
 
 #include "collisionobjects.h"
-#include "globals.h"
+#include "gameobject.h"
 #include "raylib.h"
-#include <algorithm>
 
 class Bullet : public GameObject {
 public:

@@ -1,7 +1,7 @@
 #ifndef BACKGROUND_H
 #define BACKGROUND_H
 
-#include "globals.h"
+#include "gameobject.h"
 #include "raylib.h"
 
 class Background : public GameObject {

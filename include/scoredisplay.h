@@ -1,8 +1,7 @@
 #ifndef SCORE_DISPLAY_H
 #define SCORE_DISPLAY_H
 
-#include "globals.h"
-#include "raylib.h"
+#include "gameobject.h"
 
 class ScoreDisplay : public GameObject {
 public:

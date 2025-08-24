@@ -7,8 +7,6 @@
 #include "player.h"
 #include "raylib.h"
 #include "scoredisplay.h"
-#include <iostream>
-#include <list>
 
 int main(void) {
     InitWindow(1920, 1080, "C++ Game");

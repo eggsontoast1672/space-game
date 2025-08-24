@@ -1,7 +1,7 @@
 #ifndef MUSICPLAYER_H
 #define MUSICPLAYER_H
 
-#include "globals.h"
+#include "gameobject.h"
 #include "raylib.h"
 
 class MusicPlayer : public GameObject {

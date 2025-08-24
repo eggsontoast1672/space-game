@@ -1,12 +1,7 @@
 #ifndef COLLISION_HANDLER_H
 #define COLLISION_HANDLER_H
 
-#include "bullet.h"
-#include "collisionobjects.h"
-#include "enemy.h"
-#include "globals.h"
-#include "raylib.h"
-#include <stdio.h>
+#include "gameobject.h"
 
 class CollisionHandler : public GameObject {
 public:

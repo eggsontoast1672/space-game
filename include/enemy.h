@@ -2,10 +2,8 @@
 #define ENEMY_H
 
 #include "collisionobjects.h"
-#include "globals.h"
-#include "player.h"
+#include "gameobject.h"
 #include "raylib.h"
-#include <algorithm>
 
 class Enemy : public GameObject {
 public:

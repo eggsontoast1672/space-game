@@ -1,9 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "bullet.h"
-#include "globals.h"
-#include <iostream>
+#include "gameobject.h"
+#include "raylib.h"
 
 class Player : public GameObject {
 public:
