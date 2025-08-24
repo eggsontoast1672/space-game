@@ -1,20 +1,23 @@
 #ifndef BACKGROUND_H
 #define BACKGROUND_H
 
-#include "gameobject.h"
 #include "raylib.h"
 
-class Background : public GameObject {
+class Background {
 public:
-    Background(void);
-    virtual void Update();
-    virtual void Render();
-    ~Background(void);
+    Background();
+    Background(const Background &) = delete;
+    Background &operator=(const Background &) = delete;
+    Background(Background &&) = delete;
+    Background &operator=(Background &&) = delete;
+    ~Background();
+
+    void render() const;
 
 private:
-    Texture texture;
-    Rectangle source;
-    Rectangle destination;
+    Texture m_texture;
+    Rectangle m_source;
+    Rectangle m_dest;
 };
 
 #endif

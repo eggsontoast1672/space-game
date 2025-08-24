@@ -1,28 +1,26 @@
 #include "background.h"
 
-#include "globals.h"
-
 Background::Background() {
-    gameObjects.push_back(this);
+    m_texture = LoadTexture(ASSET_PATH "background.png");
 
-    Image backgroundImage = LoadImage(ASSET_PATH "background.png");
-    texture = LoadTextureFromImage(backgroundImage);
-    SetTextureFilter(texture, FILTER_POINT);
+    m_source = Rectangle{
+        0.0f,
+        0.0f,
+        static_cast<float>(m_texture.width),
+        static_cast<float>(m_texture.height),
+    };
+
+    m_dest = Rectangle{
+        0.0f,
+        0.0f,
+        static_cast<float>(GetScreenWidth()),
+        static_cast<float>(GetScreenHeight()),
+    };
 }
 
-void Background::Update() {}
-
-void Background::Render() {
-    Rectangle source = {(float)GetScreenWidth() / 2,
-                        (float)GetScreenWidth() / 2 - texture.width,
-                        (float)GetScreenHeight() / 2,
-                        (float)GetScreenHeight() / 2 - texture.height};
-    Rectangle destination = {0, 0, (float)GetScreenWidth() * 2,
-                             (float)GetScreenHeight() * 2};
-    DrawTextureTiled(
-        texture, source, destination,
-        {(float)GetScreenWidth() / 2, (float)GetScreenHeight() / 2}, 0, 10,
-        WHITE);
+void Background::render() const {
+    Vector2 origin{0, 0};
+    DrawTexturePro(m_texture, m_source, m_dest, origin, 0, WHITE);
 }
 
-Background::~Background() { UnloadTexture(texture); }
+Background::~Background() { UnloadTexture(m_texture); }

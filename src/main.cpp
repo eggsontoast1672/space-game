@@ -11,7 +11,7 @@
 int main(void) {
     InitWindow(1920, 1080, "C++ Game");
 
-    Background bg;
+    Background background;
     CollisionHandler handler;
     Player player;
     EnemySpawner spawner;
@@ -24,7 +24,10 @@ int main(void) {
         }
 
         BeginDrawing();
+
         ClearBackground(WHITE);
+
+        background.render();
 
         for (GameObject *gameObject : gameObjects) {
             gameObject->Render();
