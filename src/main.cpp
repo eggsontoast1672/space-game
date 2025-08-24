@@ -19,6 +19,8 @@ int main(void) {
     ScoreDisplay display;
 
     while (!WindowShouldClose()) {
+        spawner.update();
+
         for (GameObject *gameObject : gameObjects) {
             gameObject->Update();
         }

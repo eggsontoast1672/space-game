@@ -3,20 +3,19 @@
 
 #include <list>
 
-#include "gameobject.h"
+#include "enemy.h"
 
-class EnemySpawner : public GameObject {
+class EnemySpawner {
 public:
     EnemySpawner();
-    virtual void Update();
-    virtual void Render();
-    ~EnemySpawner(void);
+
+    void update();
 
 private:
-    std::list<GameObject *> enemies;
-    void Spawn();
-    float timeAtLastSpawn;
-    float timeBetweenSpawns;
+    static constexpr float time_between_spawns = 2.6f;
+
+    std::list<Enemy> m_enemies;
+    float m_last_spawn_time;
 };
 
 #endif

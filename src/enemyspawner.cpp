@@ -1,29 +1,15 @@
 #include "enemyspawner.h"
 
-#include "enemy.h"
-#include "globals.h"
 #include "raylib.h"
 
 EnemySpawner::EnemySpawner() {
-    gameObjects.push_back(this);
-
-    timeBetweenSpawns = 2.6f;
-    timeAtLastSpawn = GetTime() - timeBetweenSpawns;
+    m_last_spawn_time = GetTime() - time_between_spawns;
 }
 
-void EnemySpawner::Update() {
-    if (timeAtLastSpawn + timeBetweenSpawns <= (float)GetTime()) {
-        Spawn();
-
-        timeAtLastSpawn = (float)GetTime();
+void EnemySpawner::update() {
+    double time = GetTime();
+    if (m_last_spawn_time + time_between_spawns <= time) {
+        m_enemies.emplace_back();
+        m_last_spawn_time = time;
     }
-}
-
-void EnemySpawner::Render() {}
-
-EnemySpawner::~EnemySpawner() { enemies.clear(); }
-
-void EnemySpawner::Spawn() {
-    Enemy *enemy = new Enemy();
-    enemies.push_back(enemy);
 }
