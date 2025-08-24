@@ -1,0 +1,4 @@
+# When fuzzy finding files in the project, we typically do not care about the
+# files in these directories.
+/assets
+/lib
