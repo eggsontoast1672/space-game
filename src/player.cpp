@@ -1,5 +1,8 @@
 #include "player.h"
 
+#include "bullet.h"
+#include "globals.h"
+
 Player::Player() {
     gameObjects.push_back(this);
 

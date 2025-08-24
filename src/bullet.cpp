@@ -1,5 +1,9 @@
 #include "bullet.h"
 
+#include <algorithm>
+
+#include "globals.h"
+
 Bullet::Bullet(Vector2 spawnPosition) {
     gameObjects.push_back(this);
     bulletCollisionObjects.push_back(this);

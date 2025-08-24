@@ -1,5 +1,10 @@
 #include "collisionhandler.h"
 
+#include "bullet.h"
+#include "collisionobjects.h"
+#include "enemy.h"
+#include "globals.h"
+
 CollisionHandler::CollisionHandler() { gameObjects.push_back(this); }
 
 void CollisionHandler::Update() {

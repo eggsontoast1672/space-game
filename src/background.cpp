@@ -1,5 +1,7 @@
 #include "background.h"
 
+#include "globals.h"
+
 Background::Background() {
     gameObjects.push_back(this);
 

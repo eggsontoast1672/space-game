@@ -1,5 +1,9 @@
 #include "enemyspawner.h"
 
+#include "enemy.h"
+#include "globals.h"
+#include "raylib.h"
+
 EnemySpawner::EnemySpawner() {
     gameObjects.push_back(this);
 

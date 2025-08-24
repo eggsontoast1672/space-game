@@ -1,5 +1,10 @@
 #include "enemy.h"
 
+#include <algorithm>
+#include <cstdio>
+
+#include "globals.h"
+
 Enemy::Enemy() {
     gameObjects.push_back(this);
     enemyCollisionObjects.push_back(this);

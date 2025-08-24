@@ -1,5 +1,8 @@
 #include "scoredisplay.h"
 
+#include "globals.h"
+#include "raylib.h"
+
 ScoreDisplay::ScoreDisplay() { gameObjects.push_back(this); }
 
 void ScoreDisplay::Update() {}

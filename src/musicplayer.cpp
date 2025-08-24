@@ -1,5 +1,7 @@
 #include "musicplayer.h"
 
+#include "globals.h"
+
 MusicPlayer::MusicPlayer() {
     gameObjects.push_back(this);
 
