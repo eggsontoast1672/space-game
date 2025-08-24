@@ -1,33 +1,32 @@
 #ifndef BULLET_H
 #define BULLET_H
 
-#include "globals.h"
 #include "collisionobjects.h"
+#include "globals.h"
 #include "raylib.h"
 #include <algorithm>
 
-class Bullet : public GameObject
-{
-    public:
-        Bullet(Vector2 spawnPosition);
-        virtual void Update();
-        virtual void Render();
-        virtual ~Bullet(void);
+class Bullet : public GameObject {
+public:
+    Bullet(Vector2 spawnPosition);
+    virtual void Update();
+    virtual void Render();
+    virtual ~Bullet(void);
 
-        void Destroy();
-        Rectangle GetRect();
+    void Destroy();
+    Rectangle GetRect();
 
-    private:
-        void UpdateCollisionRectPosition();
+private:
+    void UpdateCollisionRectPosition();
 
-        Vector2 position;
-        float bulletSpeed;
-        Texture texture;
-        Sound spawnSound;
+    Vector2 position;
+    float bulletSpeed;
+    Texture texture;
+    Sound spawnSound;
 
-        float timeAlive;
+    float timeAlive;
 
-        Rectangle collisionRect;
+    Rectangle collisionRect;
 };
 
 #endif

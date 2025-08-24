@@ -1,50 +1,36 @@
 #include "player.h"
 
-//Constructor
-Player::Player()
-{
-    gameObjects.push_back(this); //Add to gameobjects
+Player::Player() {
+    gameObjects.push_back(this);
 
-    //Init image
     Image playerImage = LoadImage(ASSET_PATH "ship.png");
-    ImageRotateCW(&playerImage); //Rotate to align
+    ImageRotateCW(&playerImage);
     texture = LoadTextureFromImage(playerImage);
     texture.height *= 10;
     texture.width *= 10;
 
-    //Init position
     position = {(float)GetScreenWidth() / 8, (float)GetScreenHeight() / 2};
 
-    //Init speed
     speed = -325;
 
-    //Init shots
     timeBetweenShots = 0.45f;
     lastShotTime = (float)GetTime() - timeBetweenShots;
 
-    //Init score
     score = 0;
 
-    //Spawn sfx
     shotSound = LoadSound(ASSET_PATH "shootSFX.mp3");
 }
-//Methods
-void Player::Update()
-{
-    //Input
-    if ((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && position.y > 64) 
-    {
-        //Up
+
+void Player::Update() {
+    if ((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && position.y > 64) {
         position.y += speed * GetFrameTime();
-    }
-    else if ((IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) && position.y < GetScreenHeight() - 64)
-    {
-        //Down
+    } else if ((IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) &&
+               position.y < GetScreenHeight() - 64) {
         position.y -= speed * GetFrameTime();
     }
 
-    if (IsKeyPressed(KEY_SPACE) && lastShotTime + timeBetweenShots <= (float)GetTime())
-    {
+    if (IsKeyPressed(KEY_SPACE) &&
+        lastShotTime + timeBetweenShots <= (float)GetTime()) {
         new Bullet(position);
 
         PlaySound(shotSound);
@@ -52,14 +38,13 @@ void Player::Update()
         lastShotTime = (float)GetTime();
     }
 }
-void Player::Render()
-{
-    DrawTexture(texture, position.x - texture.width / 2, position.y - texture.height / 2, WHITE);
+
+void Player::Render() {
+    DrawTexture(texture, position.x - texture.width / 2,
+                position.y - texture.height / 2, WHITE);
 }
-//Vars
-//Deconstructor
-Player::~Player()
-{
+
+Player::~Player() {
     UnloadTexture(texture);
     UnloadSound(shotSound);
 }

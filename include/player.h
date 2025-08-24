@@ -1,12 +1,11 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "globals.h"
 #include "bullet.h"
+#include "globals.h"
 #include <iostream>
 
-class Player : public GameObject
-{
+class Player : public GameObject {
 public:
     Player();
     virtual void Update();

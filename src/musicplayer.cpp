@@ -1,30 +1,17 @@
 #include "musicplayer.h"
 
-//Constructor
-MusicPlayer::MusicPlayer()
-{
-    gameObjects.push_back(this); //Add to gameobjects
+MusicPlayer::MusicPlayer() {
+    gameObjects.push_back(this);
 
-    //Init audio
     InitAudioDevice();
 
-    //Init music
     music = LoadMusicStream(ASSET_PATH "Music.mp3");
     PlayMusicStream(music);
     music.looping = true;
 }
-//Methods
-void MusicPlayer::Update()
-{
-    UpdateMusicStream(music);
-}
-void MusicPlayer::Render()
-{
-    //No logic
-}
-//Vars
-//Deconstructor
-MusicPlayer::~MusicPlayer()
-{
-    UnloadTexture(texture);
-}
+
+void MusicPlayer::Update() { UpdateMusicStream(music); }
+
+void MusicPlayer::Render() {}
+
+MusicPlayer::~MusicPlayer() { UnloadTexture(texture); }

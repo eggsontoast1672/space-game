@@ -4,8 +4,7 @@
 #include "globals.h"
 #include "raylib.h"
 
-class MusicPlayer : public GameObject
-{
+class MusicPlayer : public GameObject {
 public:
     MusicPlayer(void);
     virtual void Update();
