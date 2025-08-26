@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(SpaceGame)
-find_package(SDL3)
+
+add_subdirectory(lib/SDL)
+add_subdirectory(lib/SDL_image)
+
 add_executable(game src/main.c)
-target_link_libraries(game SDL3::SDL3)
+target_link_libraries(game SDL3::SDL3 SDL3_image::SDL3_image)
