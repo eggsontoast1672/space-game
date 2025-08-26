@@ -15,6 +15,12 @@ Player::Player() : m_texture("assets/ship.png"), m_sprite(m_texture) {
     m_sprite.setScale({10.0f, 10.0f});
 }
 
+void Player::on_key_pressed(const sf::Event::KeyPressed *event) {
+    if (event->code == sf::Keyboard::Key::Space) {
+        m_bullets.emplace_front(m_sprite.getPosition());
+    }
+}
+
 void Player::update(float dt) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
         m_sprite.move({0.0f, -speed * dt});
@@ -23,10 +29,18 @@ void Player::update(float dt) {
         m_sprite.move({0.0f, speed * dt});
         collide_screen_bottom();
     }
+
+    for (auto &bullet : m_bullets) {
+        bullet.update(dt);
+    }
 }
 
 void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     target.draw(m_sprite);
+
+    for (const auto &bullet : m_bullets) {
+        target.draw(bullet);
+    }
 }
 
 void Player::collide_screen_top() {

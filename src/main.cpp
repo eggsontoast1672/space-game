@@ -20,6 +20,9 @@ int main() {
         while (auto event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
+            } else if (const auto *key_pressed =
+                           event->getIf<sf::Event::KeyPressed>()) {
+                player.on_key_pressed(key_pressed);
             }
         }
 
