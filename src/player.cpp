@@ -9,6 +9,14 @@ Player::Player() : m_texture("assets/ship.png"), m_sprite(m_texture) {
     m_sprite.setScale({10.0f, 10.0f});
 }
 
+void Player::update(float dt) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
+        m_sprite.move({0.0f, -speed * dt});
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
+        m_sprite.move({0.0f, speed * dt});
+    }
+}
+
 void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     target.draw(m_sprite);
 }

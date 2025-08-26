@@ -12,12 +12,18 @@ int main() {
 
     Player player;
 
+    sf::Clock clock;
+
     while (window.isOpen()) {
+        float dt = clock.restart().asSeconds();
+
         while (auto event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
             }
         }
+
+        player.update(dt);
 
         window.clear();
         window.draw(bg_sprite);
